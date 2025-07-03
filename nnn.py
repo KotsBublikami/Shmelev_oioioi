@@ -51,7 +51,7 @@ def spawnRebenok():
         reb.shapesize(stretch_wid = 0.5, stretch_len = 0.5)
         reb.dx = random.randrange(-20, 20)/75
         reb.dy = random.randrange(-20, 20)/75
-        reb.penup()
+        reb.penup()#,kjby
         x = random.randrange(-300, 300)
         y = random.randrange(-300, 300)
         reb.goto(x, y)
