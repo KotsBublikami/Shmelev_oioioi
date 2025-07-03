@@ -2,6 +2,7 @@ import turtle
 import random
 import time
 import math
+
 screen = turtle.Screen()
 shmelev = turtle.Turtle()
 screen.tracer(0)
@@ -19,8 +20,11 @@ pen.speed(0)
 pen.color("black")
 pen.penup()
 pen.hideturtle()
-
-
+pen.goto(330, 310)
+screen.setup(width = 1.0, height = 1.0)
+canvas = screen.getcanvas()
+root = canvas.winfo_toplevel()
+root.overrideredirect(1)
 
 def setup_score_display():
     score_display = turtle.Turtle()
@@ -37,9 +41,8 @@ def setup_score_display():
 
 setup_score_display()
 
-
 def spawnRebenok():
-    for i in range(random.randrange(1, 2)):
+    for i in range(random.randrange(15)):
         reb = turtle.Turtle()
         reb.shape("square")
         reb.color("green")
@@ -54,7 +57,7 @@ def spawnRebenok():
         deti.append(reb)
 spawnRebenok()
 count_step = 0
-
+    
 highlighting = turtle.Turtle()
 highlighting.ht()
 highlighting.penup()
@@ -92,8 +95,6 @@ screen.onkeypress(turn_left, "a")
 screen.onkeypress(turn_right, "d")
 pen.clear()
 
-
-
 def checking(figura):
   if figura.xcor() > 300:
     figura.setx(-300)
@@ -106,8 +107,6 @@ def checking(figura):
 
   if figura.ycor() < -300:
     figura.sety(300)
-
-
 
 def get_distance_shmelev_reb(reb):
     x_distance = (shmelev.xcor() - reb.xcor()) ** 2
@@ -124,7 +123,8 @@ game_over = False
 step_over = False
 while not game_over:
     egg = time.time()
-    pen.write(f"Время: {egg - start} сек", align="right", font=("Arial", 24, "normal"))
+    pen.clear()
+    pen.write(f"Время: {round(egg - start, 1)} сек", align="right", font=("Arial", 24, "normal"))
     
     checking(shmelev)
     screen.update()
@@ -147,6 +147,7 @@ while not game_over:
     if len(deti) == 0:
         game_over = True
         end = time.time()
+        pen.clear()
         screen.bgcolor("green")
         
         win = turtle.Turtle()
@@ -160,5 +161,3 @@ while not game_over:
         screen.update()
 
 screen.mainloop()
-  
- 
