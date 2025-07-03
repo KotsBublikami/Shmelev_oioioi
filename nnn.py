@@ -22,7 +22,7 @@ pen.penup()
 pen.hideturtle()
 pen.goto(330, 310)
 screen.setup(width = 1.0, height = 1.0)
-canvas = screen.getcanvas()
+canvas = screen.getcanvas() #МЕНЯ ЗАСТАВИЛИ СДЕЛАТЬ КОММЕНТАРИЙ
 root = canvas.winfo_toplevel()
 root.overrideredirect(1)
 
