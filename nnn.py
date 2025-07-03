@@ -23,7 +23,8 @@ pen.hideturtle()
 pen.goto(330, 310)
 screen.setup(width = 1.0, height = 1.0)
 canvas = screen.getcanvas() #МЕНЯ ЗАСТАВИЛИ СДЕЛАТЬ КОММЕНТАРИЙ
-root = canvas.winfo_toplevel()
+root = canvas.winfo_toplevel()#у меня скоро не останется места для коммментвриев
+
 root.overrideredirect(1)
 
 def setup_score_display():
